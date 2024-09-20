@@ -1,0 +1,26 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "ZDC88H7BFT.xyz.usetracker.trackr"
+        ],
+        "paths": [
+          "shared-workout/*",
+          "shared-workout-log/*",
+        ],
+        "components": [
+          {
+            "/": "/*"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "ZDC88H7BFT.xyz.usetracker.trackr"
+    ]
+  }
+}
