@@ -6,13 +6,14 @@
         "appIDs": [
           "ZDC88H7BFT.xyz.usetracker.trackr"
         ],
-        "paths": [
-          "shared-workout/*",
-          "shared-workout-log/*"
-        ],
         "components": [
           {
-            "/": "/*"
+            "/": "/shared-workout/*",
+            "comment": "Matches any URL with a path that starts with /shared-workout/."
+          },
+          {
+            "/": "/shared-workout-log/*"
+            "comment": "Matches any URL with a path that starts with /shared-workout-log/."
           }
         ]
       }
