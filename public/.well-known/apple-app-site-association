@@ -8,7 +8,7 @@
         ],
         "paths": [
           "shared-workout/*",
-          "shared-workout-log/*",
+          "shared-workout-log/*"
         ],
         "components": [
           {
