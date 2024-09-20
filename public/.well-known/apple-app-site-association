@@ -12,7 +12,7 @@
             "comment": "Matches any URL with a path that starts with /shared-workout/."
           },
           {
-            "/": "/shared-workout-log/*"
+            "/": "/shared-workout-log/*",
             "comment": "Matches any URL with a path that starts with /shared-workout-log/."
           }
         ]
