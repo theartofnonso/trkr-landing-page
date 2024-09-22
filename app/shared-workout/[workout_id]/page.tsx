@@ -5,75 +5,103 @@ import {generateClient} from 'aws-amplify/api';
 import config from '../../../src/amplifyconfiguration.json';
 import {getRoutineTemplate} from "@/src/graphql/queries";
 import {useParams} from 'next/navigation'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 Amplify.configure(config);
 
+// Define the Set interface
 interface Set {
-    weight: number
-    reps: number
+    value1: number;
+    value2: number;
+    checked: boolean;
 }
 
-interface ExerciseSectionProps {
-    title: string;
+// Define the Exercise interface
+interface Exercise {
+    id: string;
+    name: string;
+    primaryMuscleGroup: string;
+    type: string;
+    owner: boolean;
+    video: string | null;
+    creditSource: string | null;
+    credit: string | null;
+}
+
+// Define the ExerciseLog interface
+interface ExerciseTemplate {
+    superSetId: string;
+    exercise: Exercise;
+    notes: string;
     sets: Set[];
+}
+
+// Define the FullBodyDay interface
+interface Workout {
+    notes: string;
+    exercises: ExerciseTemplate[];
+    scheduleType: string;
+    name: string;
+    days: number[];
+    scheduledDate: string | null;
+    scheduleIntervals: number;
 }
 
 export default function WorkoutTracker() {
 
     const {workout_id} = useParams();
 
-    const [workout, setWorkout] = useState({});
+    const [workout, setWorkout] = useState<Workout | null>(null);
 
-    function getWorkout() {
+    useEffect(() => {
 
-        const client = generateClient();
+        async function getWorkout() {
 
-        client.graphql({
-            query: getRoutineTemplate, variables: {id: `${workout_id}`},
-            authMode: "iam"
-        }).then(data => {
-            const workoutData = data.data;
-            const workout = workoutData.getRoutineTemplate;
-            console.log(workout);
-            setWorkout({});
-        });
+            const client = generateClient();
+
+            const workoutData = await client.graphql({
+                query: getRoutineTemplate, variables: {id: `${workout_id}`},
+                authMode: "iam"
+            });
+            const workoutString = workoutData.data.getRoutineTemplate?.data;
+            if (typeof workoutString === "string") {
+                // Parse sets in each exercise
+                const parsedData = JSON.parse(workoutString);
+                parsedData.exercises = parsedData.exercises.map((exerciseStr: string) => {
+                    const exercise = JSON.parse(exerciseStr);
+
+                    // Parse sets within the exercise
+                    exercise.sets = exercise.sets.map((setStr: string) => JSON.parse(setStr));
+
+                    return exercise;
+                });
+
+                setWorkout(parsedData);
+            }
+        }
+
+        getWorkout();
+
+    }, []);
+
+    if (!workout) {
+        return <div>Loading...</div>;
     }
-
-    console.log(workout);
-
-    getWorkout();
 
     return (
         <div className="min-h-screen bg-white text-white p-4 md:p-6 lg:p-8">
             <div className="max-w-md mx-auto">
 
                 <div className="space-y-6">
-                    <ExerciseSection
-                        title="Smith Machine Incline Bench Press"
-                        sets={[
-                            {weight: 90.0, reps: 8},
-                            {weight: 90.0, reps: 8},
-                            {weight: 90.0, reps: 5},
-                        ]}
-                    />
-
-                    <ExerciseSection
-                        title="Cable Chest Press"
-                        sets={[
-                            {weight: 21.25, reps: 15},
-                            {weight: 28.75, reps: 7},
-                            {weight: 28.75, reps: 9},
-                        ]}
-                    />
-
-                    <ExerciseSection
-                        title="Dumbbell Lateral Raise"
-                        sets={[
-                            {weight: 22.5, reps: 14},
-                            {weight: 22.5, reps: 11},
-                        ]}
-                    />
+                    {workout.exercises.map((exerciseTemplate: ExerciseTemplate, index: number) => (
+                        <ExerciseSection
+                            key={index}
+                            superSetId={exerciseTemplate.superSetId}
+                            exercise={exerciseTemplate.exercise}
+                            notes={exerciseTemplate.notes}
+                            sets={exerciseTemplate.sets}
+                        />
+                    ))}
                 </div>
 
             </div>
@@ -81,20 +109,21 @@ export default function WorkoutTracker() {
     )
 }
 
-function ExerciseSection({title, sets}: ExerciseSectionProps) {
+function ExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
     return (
         <section className="bg-white border border-black rounded-lg p-4 text-black font-[family-name:var(--font-geist-sans)]">
-            <h2 className="text-lg font-medium mb-3">{title}</h2>
+            <h2 className="text-lg font-medium mb-3">{exercise.name}</h2>
+            <h5 className="text-lg font-medium mb-3">{notes}</h5>
             <div className="grid grid-cols-2 gap-2 text-sm font-medium">
                 <div>WEIGHT</div>
                 <div>REPS</div>
                 {sets.map((set, index) => (
                     <>
                         <div key={`weight-${index}`} className="bg-white border border-black p-2 rounded">
-                            {set.weight}
+                            {set.value1}
                         </div>
                         <div key={`reps-${index}`} className="bg-white border border-black p-2 rounded">
-                            {set.reps}
+                            {set.value2}
                         </div>
                     </>
                 ))}
