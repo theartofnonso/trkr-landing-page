@@ -148,6 +148,20 @@ export default function WorkoutLog() {
     const dateString = date.getDate()  + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " +
         date.getHours() + ":" + date.getMinutes();
 
+    const completedExercises = workoutLog.exercises
+        .map((exerciseLog) => {
+            exerciseLog.sets = exerciseLog.sets.filter((set) => set.value2 != 0 && set.checked);
+            return exerciseLog;
+        })
+        .filter((exerciseLog: ExerciseLog) => exerciseLog.sets.length > 0 );
+
+    let numberOfSets = 0;
+    completedExercises.forEach((exercise) => {
+        numberOfSets += exercise.sets.length;
+    })
+
+    const numberOfCompletedExercises = completedExercises.length
+
     return (
         <div className="min-h-screen bg-white p-4 md:p-6 lg:p-8 bg-gradient-to-b from-sapphireDark80 to-sapphireDark text-white">
             <div className="max-w-md mx-auto">
@@ -155,17 +169,17 @@ export default function WorkoutLog() {
                 <h1 className="flex justify-center text-lg">{workoutLog.name}</h1>
 
                 <div>
-                    <h1 className="flex justify-center text-sm py-6 font-semibold">{dateString}</h1>
+                    <h1 className="flex justify-center text-sm py-6 font-thin">{dateString}</h1>
                 </div>
 
                 <div className="bg-sapphireDark bg-opacity-40 text-white rounded-md shadow-lg py-2">
                     <div className="flex justify-between items-center">
                         <div className="flex-1 text-center">
-                            <p className="text-sm font-thin">18 Sets</p>
+                            <p className="text-sm font-thin">{numberOfSets} Sets</p>
                         </div>
                         <div className="w-px h-8 bg-sapphireLighter"></div>
                         <div className="flex-1 text-center">
-                            <p className="text-sm font-thin">{workoutLog.exercises.length} Exercises</p>
+                            <p className="text-sm font-thin">{numberOfCompletedExercises} Exercises</p>
                         </div>
                         <div className="w-px h-8 bg-sapphireLighter"></div>
                         <div className="flex-1 text-center">

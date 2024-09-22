@@ -4,6 +4,7 @@ import React from "react";
 interface Set {
     value1: number;
     value2: number;
+    checked: boolean;
 }
 
 // Define the Exercise interface
@@ -46,7 +47,7 @@ export function WRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
             </div>
             {sets.map((set, index) => (
                 <div className="my-2" key={index}>
-                    <ExerciseCardItem value1={set.value1} value2={set.value2}/>
+                    <ExerciseCardItem value1={set.value1} value2={set.value2} checked={set.checked}/>
                 </div>
             ))}
         </section>
@@ -63,7 +64,7 @@ export function BWExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
             </div>
             {sets.map((set, index) => (
                 <div className="my-2" key={index}>
-                    <ExerciseCardItem value1={set.value1} value2={set.value2}/>
+                    <ExerciseCardItem value1={set.value1} value2={set.value2} checked={set.checked}/>
                 </div>
             ))}
         </section>
@@ -80,7 +81,7 @@ export function DRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
             </div>
             {sets.map((set, index) => (
                 <div className="my-2" key={index}>
-                    <ExerciseCardItem value1={set.value1} value2={set.value2}/>
+                    <ExerciseCardItem value1={set.value1} value2={set.value2} checked={set.checked}/>
                 </div>
             ))}
         </section>
