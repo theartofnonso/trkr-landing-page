@@ -196,7 +196,7 @@ export default function WorkoutLog() {
                 </div>
 
                 <div className="space-y-2">
-                    {workoutLog.exercises.map((exerciseTemplate: ExerciseLog, index: number) => (
+                    {completedExercises.map((exerciseTemplate: ExerciseLog, index: number) => (
                         renderComponent(exerciseTemplate, index)
                     ))}
                 </div>
