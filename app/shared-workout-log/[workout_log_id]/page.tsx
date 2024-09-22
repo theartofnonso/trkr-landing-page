@@ -4,7 +4,7 @@ import {Amplify} from 'aws-amplify';
 import {generateClient} from 'aws-amplify/api';
 import {getRoutineLog} from "@/src/graphql/queries";
 import {useParams} from 'next/navigation'
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {BWExerciseSection, DRExerciseSection, ExerciseLog, WRExerciseSection} from "@/app/components/ExerciseCard";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 
@@ -153,8 +153,25 @@ export default function WorkoutLog() {
             <div className="max-w-md mx-auto">
 
                 <h1 className="flex justify-center text-lg">{workoutLog.name}</h1>
+
                 <div>
-                    <h1 className="flex justify-center text-sm pt-2 font-semibold">{dateString}</h1>
+                    <h1 className="flex justify-center text-sm py-6 font-semibold">{dateString}</h1>
+                </div>
+
+                <div className="bg-sapphireDark bg-opacity-40 text-white rounded-md shadow-lg py-2">
+                    <div className="flex justify-between items-center">
+                        <div className="flex-1 text-center">
+                            <p className="text-sm font-thin">18 Sets</p>
+                        </div>
+                        <div className="w-px h-8 bg-sapphireLighter"></div>
+                        <div className="flex-1 text-center">
+                            <p className="text-sm font-thin">{workoutLog.exercises.length} Exercises</p>
+                        </div>
+                        <div className="w-px h-8 bg-sapphireLighter"></div>
+                        <div className="flex-1 text-center">
+                            <p className="text-sm font-thin">1h 7m 47s</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="space-y-2">

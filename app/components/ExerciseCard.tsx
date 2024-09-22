@@ -1,9 +1,9 @@
-
 // Define the Set interface
+import React from "react";
+
 interface Set {
     value1: number;
     value2: number;
-    checked: boolean;
 }
 
 // Define the Exercise interface
@@ -39,20 +39,16 @@ export function WRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
         <section className="rounded-lg p-4 text-white font-[family-name:var(--font-geist-sans)]">
             <h2 className="text-sm font-medium mb-3 flex justify-center">{exercise.name}</h2>
             <h5 className="text-sm font-medium mb-3">{notes}</h5>
-            <div className="grid grid-cols-2 gap-2 text-sm font-medium">
-                <p className="text-xs flex justify-center">WEIGHT</p>
+
+            <div className="flex justify-around">
+                <div className="text-xs flex justify-center">WEIGHT</div>
                 <div className="text-xs flex justify-center">REPS</div>
-                {sets.map((set, index) => (
-                    <>
-                        <div key={`weight-${index}`} className="bg-sapphireLighter p-2 rounded flex justify-center">
-                            {set.value1}
-                        </div>
-                        <div key={`reps-${index}`} className="bg-sapphireLighter p-2 rounded flex justify-center">
-                            {set.value2}
-                        </div>
-                    </>
-                ))}
             </div>
+            {sets.map((set, index) => (
+                <div className="my-2" key={index}>
+                    <ExerciseCardItem value1={set.value1} value2={set.value2}/>
+                </div>
+            ))}
         </section>
     )
 }
@@ -62,14 +58,14 @@ export function BWExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
         <section className="rounded-lg p-4 text-white font-[family-name:var(--font-geist-sans)]">
             <h2 className="text-sm font-medium mb-3 flex justify-center">{exercise.name}</h2>
             <h5 className="text-sm font-medium mb-3">{notes}</h5>
-            <div className="text-sm font-medium">
+            <div className="flex justify-around">
                 <div className="text-xs flex justify-center">REPS</div>
-                {sets.map((set, index) => (
-                    <div key={`reps-${index}`} className="bg-sapphireLighter p-2 rounded flex justify-center">
-                        {set.value2}
-                    </div>
-                ))}
             </div>
+            {sets.map((set, index) => (
+                <div className="my-2" key={index}>
+                    <ExerciseCardItem value1={set.value1} value2={set.value2}/>
+                </div>
+            ))}
         </section>
     )
 }
@@ -79,14 +75,30 @@ export function DRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
         <section className="rounded-lg p-4 text-white font-[family-name:var(--font-geist-sans)]">
             <h2 className="text-sm font-medium mb-3 flex justify-center">{exercise.name}</h2>
             <h5 className="text-sm font-medium mb-3">{notes}</h5>
-            <div className="text-sm font-medium">
+            <div className="flex justify-around">
                 <div className="text-xs flex justify-center">TIME</div>
-                {sets.map((set, index) => (
-                    <div key={`reps-${index}`} className="bg-sapphireLighter p-2 rounded flex justify-center">
-                        {set.value2}
-                    </div>
-                ))}
             </div>
+            {sets.map((set, index) => (
+                <div className="my-2" key={index}>
+                    <ExerciseCardItem value1={set.value1} value2={set.value2}/>
+                </div>
+            ))}
         </section>
+    )
+}
+
+const ExerciseCardItem: React.FC<Set> = ({value1, value2}: Set) => {
+    return (
+        <div className="bg-sapphireDark80 text-white rounded-md shadow-lg py-2">
+            <div className="flex justify-between items-center">
+                <div className="flex-1 text-center">
+                    <p className="text-sm font-thin">{value1}</p>
+                </div>
+                <div className="w-0.5 h-8 bg-sapphireLighter bg-opacity-40"></div>
+                <div className="flex-1 text-center">
+                    <p className="text-sm font-thin">{value2}</p>
+                </div>
+            </div>
+        </div>
     )
 }
