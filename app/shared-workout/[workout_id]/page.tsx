@@ -2,8 +2,8 @@
 
 import {Amplify} from 'aws-amplify';
 import {generateClient} from 'aws-amplify/api';
-import config from '../../../src/amplifyconfiguration.json';
-import {getRoutineTemplate} from "@/src/graphql/queries";
+import config from '@/app/amplifyconfiguration.json';
+import {getRoutineTemplate} from "@/app/graphql/queries";
 import {useParams} from 'next/navigation'
 import {useEffect, useState} from "react";
 import {BWExerciseSection, DRExerciseSection, WRExerciseSection} from "@/app/components/ExerciseCard";
