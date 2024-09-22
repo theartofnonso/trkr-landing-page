@@ -21,7 +21,7 @@ interface ExerciseSectionProps {
 
 export default function WorkoutTracker() {
 
-    const workoutId = useParams().id;
+    const {workout_id} = useParams();
 
     const [workout, setWorkout] = useState({});
 
@@ -30,13 +30,17 @@ export default function WorkoutTracker() {
         const client = generateClient();
 
         client.graphql({
-            query: getRoutineTemplate, variables: {id: `${workoutId}`},
+            query: getRoutineTemplate, variables: {id: `${workout_id}`},
             authMode: "iam"
         }).then(data => {
+            const workoutData = data.data;
+            const workout = workoutData.getRoutineTemplate;
             console.log(workout);
-            setWorkout(data);
+            setWorkout({});
         });
     }
+
+    console.log(workout);
 
     getWorkout();
 
