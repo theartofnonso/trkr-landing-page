@@ -7,6 +7,7 @@ import {useParams} from 'next/navigation'
 import React, {useEffect, useState} from "react";
 import {BWExerciseSection, DRExerciseSection, ExerciseLog, WRExerciseSection} from "@/app/components/ExerciseCard";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
+import DateComponent from "@/app/components/DateComponent";
 
 const config = {
     "aws_project_region": "eu-west-2",
@@ -143,17 +144,15 @@ export default function WorkoutLog() {
         }
     };
 
-    const date = new Date(workoutLog.endTime);
-
-    const dateString = date.getDate()  + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " +
-        date.getHours() + ":" + date.getMinutes();
+    const startDate = new Date(workoutLog.startTime);
+    const endDate = new Date(workoutLog.endTime);
 
     const completedExercises = workoutLog.exercises
         .map((exerciseLog) => {
             exerciseLog.sets = exerciseLog.sets.filter((set) => set.value2 != 0 && set.checked);
             return exerciseLog;
         })
-        .filter((exerciseLog: ExerciseLog) => exerciseLog.sets.length > 0 );
+        .filter((exerciseLog: ExerciseLog) => exerciseLog.sets.length > 0);
 
     let numberOfSets = 0;
     completedExercises.forEach((exercise) => {
@@ -162,14 +161,22 @@ export default function WorkoutLog() {
 
     const numberOfCompletedExercises = completedExercises.length
 
+
+    const diff = endDate.getTime() - startDate.getTime()
+    const hours = Math.floor(diff / (1000 * 60 * 60))
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+    const workoutLogDuration = `${hours}h ${minutes}m ${seconds}s`;
+
     return (
         <div className="min-h-screen bg-white p-4 md:p-6 lg:p-8 bg-gradient-to-b from-sapphireDark80 to-sapphireDark text-white">
             <div className="max-w-md mx-auto">
 
                 <h1 className="flex justify-center text-lg">{workoutLog.name}</h1>
 
-                <div>
-                    <h1 className="flex justify-center text-sm py-6 font-thin">{dateString}</h1>
+                <div className="py-4">
+                    <DateComponent date={endDate}/>
                 </div>
 
                 <div className="bg-sapphireDark bg-opacity-40 text-white rounded-md shadow-lg py-2">
@@ -183,7 +190,7 @@ export default function WorkoutLog() {
                         </div>
                         <div className="w-px h-8 bg-sapphireLighter"></div>
                         <div className="flex-1 text-center">
-                            <p className="text-sm font-thin">1h 7m 47s</p>
+                            <p className="text-sm font-thin">{workoutLogDuration}</p>
                         </div>
                     </div>
                 </div>
