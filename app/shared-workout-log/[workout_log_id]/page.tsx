@@ -8,6 +8,7 @@ import React, {useEffect, useState} from "react";
 import {BWExerciseSection, DRExerciseSection, ExerciseLog, WRExerciseSection} from "@/app/components/ExerciseCard";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 import DateComponent from "@/app/components/DateComponent";
+import MuscleFrequencyChart from "@/app/components/MuscleFrequencyChart";
 
 const config = {
     "aws_project_region": "eu-west-2",
@@ -179,7 +180,7 @@ export default function WorkoutLog() {
                     <DateComponent date={endDate}/>
                 </div>
 
-                <div className="bg-sapphireDark bg-opacity-40 text-white rounded-md shadow-lg py-2">
+                <div className="bg-sapphireDark bg-opacity-40 text-white rounded-md shadow-lg py-2 mb-6">
                     <div className="flex justify-between items-center">
                         <div className="flex-1 text-center">
                             <p className="text-sm font-thin">{numberOfSets} Sets</p>
@@ -194,6 +195,8 @@ export default function WorkoutLog() {
                         </div>
                     </div>
                 </div>
+
+                <MuscleFrequencyChart logs={completedExercises}/>
 
                 <div className="space-y-2">
                     {completedExercises.map((exerciseTemplate: ExerciseLog, index: number) => (
