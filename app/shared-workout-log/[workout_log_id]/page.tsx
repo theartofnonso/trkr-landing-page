@@ -2,7 +2,7 @@
 
 import {Amplify} from 'aws-amplify';
 import {generateClient} from 'aws-amplify/api';
-import config from '../../../src/amplifyconfiguration.json';
+import config from '@/src/amplifyconfiguration.json';
 import {getRoutineLog} from "@/src/graphql/queries";
 import {useParams} from 'next/navigation'
 import {useEffect, useState} from "react";
