@@ -2,14 +2,14 @@
 
 import {Amplify} from 'aws-amplify';
 import {generateClient} from 'aws-amplify/api';
-import config from '@/amplifyconfiguration.json';
+import config from "@/amplifyconfiguration.json";
 import {getRoutineLog} from "@/src/graphql/queries";
 import {useParams} from 'next/navigation'
 import {useEffect, useState} from "react";
 import {BWExerciseSection, DRExerciseSection, ExerciseLog, WRExerciseSection} from "@/app/components/ExerciseCard";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 
-Amplify.configure(config);
+Amplify.configure(config, {ssr: true});
 
 // Define the FullBodyDay interface
 interface WorkoutLog {

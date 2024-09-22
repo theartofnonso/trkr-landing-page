@@ -10,7 +10,7 @@ import {BWExerciseSection, DRExerciseSection, WRExerciseSection} from "@/app/com
 import {ExerciseTemplate} from "@/app/components/ExerciseCard";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 
-Amplify.configure(config);
+Amplify.configure(config, {ssr: true});
 
 // Define the FullBodyDay interface
 interface Workout {
