@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.2.19",
     "@heroicons/react": "^2.1.5",
+    "aws-amplify": "^6.6.2",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18"
