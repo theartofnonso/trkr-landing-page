@@ -28,7 +28,7 @@ const calculateMuscleGroupFrequency = (exerciseLogs: ExerciseLog[]): { muscleGro
     return Object.keys(muscleGroupMap).map((muscleGroup) => ({
         muscleGroup,
         frequency: muscleGroupMap[muscleGroup],
-        percentage: Math.ceil(muscleGroupMap[muscleGroup] / totalExercises) * 100,
+        percentage: Math.ceil((muscleGroupMap[muscleGroup] / totalExercises) * 100),
     }));
 };
 
