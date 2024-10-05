@@ -1,9 +1,15 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "xyz.usetracker.tracker_app",
-    "sha256_cert_fingerprints":
-    ["FF:2A:CF:7B:DD:CC:F1:03:3E:E8:B2:27:7C:A2:E3:3C:DE:13:DB:AC:8E:EB:3A:B9:72:A1:0E:26:8A:F5:EC:AF"]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.usetracker.tracker_app",
+      "sha256_cert_fingerprints": [
+        "FF:2A:CF:7B:DD:CC:F1:03:3E:E8:B2:27:7C:A2:E3:3C:DE:13:DB:AC:8E:EB:3A:B9:72:A1:0E:26:8A:F5:EC:AF",
+        "73:9A:32:2C:55:BF:1D:20:51:3F:0D:59:E1:4B:CD:63:38:ED:D9:5B:BA:29:64:B4:62:ED:4C:D5:80:CB:60:A5"
+      ]
+    }
   }
-}]
+]
