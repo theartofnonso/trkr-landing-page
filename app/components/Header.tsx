@@ -11,8 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { Button } from '@/app/components/Button'
 import { Container } from '@/app/components/Container'
-import { Logo } from '@/app/components/Logo'
-import { NavLinks } from '@/app/components/NavLinks'
+import {TRKRLogo} from "@/app/components/TRKRLogo";
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -58,19 +57,16 @@ function MobileNavLink(
 export function Header() {
   return (
     <header>
-      <nav>
+      <nav className="bg-white">
         <Container className="relative z-50 flex justify-between py-8">
-          <div className="relative z-10 flex items-center gap-16">
+          <div className="relative z-10 flex items-center gap-14">
             <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+              <TRKRLogo className="h-6 w-auto"/>
             </Link>
-            <div className="hidden lg:flex lg:gap-10">
-              <NavLinks />
-            </div>
           </div>
           <div className="flex items-center gap-6">
             <Popover className="lg:hidden">
-              {({ open }) => (
+            {({ open }) => (
                 <>
                   <PopoverButton
                     className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
@@ -114,10 +110,6 @@ export function Header() {
                             <MobileNavLink href="/#reviews">
                               Reviews
                             </MobileNavLink>
-                            <MobileNavLink href="/#pricing">
-                              Pricing
-                            </MobileNavLink>
-                            <MobileNavLink href="/#faqs">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button href="/login" variant="outline">
@@ -132,12 +124,6 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
-              Log in
-            </Button>
-            <Button href="#" className="hidden lg:block">
-              Download
-            </Button>
           </div>
         </Container>
       </nav>

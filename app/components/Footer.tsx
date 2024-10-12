@@ -5,8 +5,7 @@ import { Button } from '@/app/components/Button'
 import { Container } from '@/app/components/Container'
 import { TextField } from '@/app/components/Fields'
 import { Logomark } from '@/app/components/Logo'
-import { NavLinks } from '@/app/components/NavLinks'
-import qrCode from '@/images/qr-code.svg'
+import qrCode from '@/app/logos/qr-code.svg'
 
 function QrCodeBorder(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -22,7 +21,7 @@ function QrCodeBorder(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200">
+    <footer className="border-t border-gray-200 bg-white">
       <Container>
         <div className="flex flex-col items-start justify-between gap-y-12 pb-6 pt-16 lg:flex-row lg:items-center lg:py-16">
           <div>
@@ -33,9 +32,6 @@ export function Footer() {
                 <p className="mt-1 text-sm">Invest at the perfect time.</p>
               </div>
             </div>
-            <nav className="mt-11 flex gap-8">
-              <NavLinks />
-            </nav>
           </div>
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
