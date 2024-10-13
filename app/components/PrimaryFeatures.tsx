@@ -455,6 +455,8 @@ function FeaturesMobile() {
     const slideContainerRef = useRef<React.ElementRef<'div'>>(null)
     const slideRefs = useRef<Array<React.ElementRef<'div'>>>([])
 
+    console.log(activeIndex);
+
     useEffect(() => {
         const observer = new window.IntersectionObserver(
             (entries) => {
@@ -490,7 +492,7 @@ function FeaturesMobile() {
             >
                 {features.map((feature, featureIndex) => (
                     <div
-                        ref={slideContainerRef}
+                        ref={(ref) => {ref && (slideRefs.current[featureIndex] = ref)}}
                         key={featureIndex}
                         className="w-full flex-none snap-center px-4 sm:px-6"
                     >
@@ -530,7 +532,7 @@ function FeaturesMobile() {
                         key={featureIndex}
                         className={clsx(
                             'relative h-0.5 w-4 rounded-full',
-                            featureIndex === activeIndex ? 'bg-gray-300' : 'bg-gray-500',
+                            featureIndex === activeIndex ? 'bg-white' : 'bg-gray-500',
                         )}
                         aria-label={`Go to slide ${featureIndex + 1}`}
                         onClick={() => {
