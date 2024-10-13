@@ -136,7 +136,7 @@ function Review({
         </p>
         <p className="mt-3 text-base leading-7 text-white">{body}</p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-white-200 before:content-['–_']">
+      <figcaption className="mt-3 text-sm text-gray-400 before:content-['–_']">
         {author}
       </figcaption>
     </figure>
