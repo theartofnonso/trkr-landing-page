@@ -1,13 +1,12 @@
 'use client'
 
-import { Fragment, useEffect, useId, useRef, useState } from 'react'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { useEffect, useId, useRef, useState } from 'react'
+import { Tab, TabGroup, TabList } from '@headlessui/react'
 import clsx from 'clsx'
 import {
     type MotionProps,
     type Variant,
     type Variants,
-    AnimatePresence,
     motion,
 } from 'framer-motion'
 import { useDebouncedCallback } from 'use-debounce'
@@ -26,6 +25,7 @@ import {
     TransistorLogo,
     TupleLogo,
 } from '@/app/components/StockLogos'
+import Image from "next/image";
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -40,6 +40,7 @@ const features = [
         name: 'Train with insights',
         description:
             'Log your training sessions and leverage the data to make smarter, informed decisions about your progress. Discover detailed stats on what to focus on and how to improve.',
+       image: 'phone_one.png',
         icon: DeviceUserIcon,
         screen: InviteScreen,
     },
@@ -47,6 +48,7 @@ const features = [
         name: 'Reveal patterns and plateaus',
         description:
             'Identify areas where you may be struggling and get tailored advice from TRKR Coach on how to overcome them.',
+        image: 'phone_two.png',
         icon: DeviceNotificationIcon,
         screen: StocksScreen,
     },
@@ -54,6 +56,7 @@ const features = [
         name: 'Share Personal Bests',
         description:
             'Celebrate every milestone—big or small—by sharing your progress with the people who matter most. Let them see the effort you’re putting in.',
+        image: 'phone_two.png',
         icon: DeviceTouchIcon,
         screen: InvestScreen,
     },
@@ -397,7 +400,6 @@ function FeaturesDesktop() {
     let [changeCount, setChangeCount] = useState(0)
     let [selectedIndex, setSelectedIndex] = useState(0)
     let prevIndex = usePrevious(selectedIndex)
-    let isForwards = prevIndex === undefined ? true : selectedIndex > prevIndex
 
     let onChange = useDebouncedCallback(
         (selectedIndex) => {
@@ -448,27 +450,13 @@ function FeaturesDesktop() {
                     <CircleBackground color="#13B5C8" className="animate-spin-slower" />
                 </div>
                 <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
-                    <TabPanels as={Fragment}>
-                        <AnimatePresence
-                            initial={false}
-                            custom={{ isForwards, changeCount }}
-                        >
-                            {features.map((feature, featureIndex) =>
-                                selectedIndex === featureIndex ? (
-                                    <TabPanel
-                                        static
-                                        key={feature.name + changeCount}
-                                        className="col-start-1 row-start-1 flex focus:outline-offset-[32px] ui-not-focus-visible:outline-none"
-                                    >
-                                        <feature.screen
-                                            animated
-                                            custom={{ isForwards, changeCount }}
-                                        />
-                                    </TabPanel>
-                                ) : null,
-                            )}
-                        </AnimatePresence>
-                    </TabPanels>
+                    <Image
+                        src={`/${features[selectedIndex].image}`}
+                        alt=""
+                        width="366" height="729"
+                        className="pointer-events-none absolute inset-0 h-full w-full"
+                        unoptimized
+                    />
                 </PhoneFrame>
             </div>
         </TabGroup>
@@ -527,7 +515,13 @@ function FeaturesMobile() {
                                 />
                             </div>
                             <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
-                                <feature.screen />
+                                <Image
+                                    src={`/${feature.image}`}
+                                    alt=""
+                                    width="366" height="729"
+                                    className="pointer-events-none absolute inset-0 h-full w-full"
+                                    unoptimized
+                                />
                             </PhoneFrame>
                             <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                                 <feature.icon className="h-8 w-8" />

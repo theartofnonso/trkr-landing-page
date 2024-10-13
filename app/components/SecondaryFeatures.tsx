@@ -4,39 +4,39 @@ import { Container } from '@/app/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'Log workout sessions',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      'Keep track of every rep, set, and weights whilst training.',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'Track other activities',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      'Bring other activities that align with your goals to see the bigger picture of your performance.',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'Get personalised training',
     description:
       'Get insider tips on big stock moves and act on them within seconds.',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Profit from your network',
+    name: 'Understand your training',
     description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
+      'Get personalized training tailored to your goals and fitness level. We meet you where you are.',
     icon: DeviceListIcon,
   },
   {
-    name: 'Encrypted and anonymized',
+    name: 'Share achievements',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Celebrate your wins, big or small! Share your achievements and inspire others.',
     icon: DeviceLockIcon,
   },
   {
-    name: 'Portfolio tracking',
+    name: 'Progressive overload',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'It’s the key to pushing past plateaus and making measurable progress in your fitness journey.',
     icon: DeviceChartIcon,
   },
 ]
@@ -196,11 +196,11 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+            What is inside of TRKR
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+              We understand that training is more than just lifting weights—it’s about
+              being intentional with every movement, ensuring each rep aligns with your goals.
           </p>
         </div>
         <ul
