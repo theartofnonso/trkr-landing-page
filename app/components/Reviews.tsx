@@ -131,12 +131,12 @@ function Review({
     >
       <blockquote className="">
         <StarRating rating={rating} />
-        <p className="mt-4 text-lg font-semibold leading-6 before:content-['“'] after:content-['”']">
+        <p className="mt-4 text-white text-lg font-semibold leading-6 before:content-['“'] after:content-['”']">
           {title}
         </p>
-        <p className="mt-3 text-base leading-7">{body}</p>
+        <p className="mt-3 text-base leading-7 text-white">{body}</p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-gray-400 before:content-['–_']">
+      <figcaption className="mt-3 text-sm text-white-400 before:content-['–_']">
         {author}
       </figcaption>
     </figure>
