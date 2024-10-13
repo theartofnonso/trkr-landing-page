@@ -3,7 +3,6 @@ import clsx from 'clsx'
 export function PhoneFrame({
                                className,
                                children,
-                               priority = false,
                                ...props
                            }: React.ComponentPropsWithoutRef<'div'> & { priority?: boolean }) {
     return (

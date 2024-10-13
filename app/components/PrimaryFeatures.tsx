@@ -55,7 +55,7 @@ const features = [
     {
         name: 'Share Personal Bests',
         description:
-            'Celebrate every milestone—big or small—by sharing your progress with the people who matter most. Let them see the effort you’re putting in.',
+            'Celebrate every milestone—big or small—by sharing your progress with the people who matter most. const them see the effort you’re putting in.',
         image: 'phone_three.png',
         icon: DeviceTouchIcon,
         screen: InvestScreen,
@@ -101,7 +101,7 @@ function DeviceNotificationIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 function DeviceTouchIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-    let id = useId()
+    const id = useId()
 
     return (
         <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
@@ -386,25 +386,12 @@ function InvestScreen(props: ScreenProps) {
     )
 }
 
-function usePrevious<T>(value: T) {
-    let ref = useRef<T>()
-
-    useEffect(() => {
-        ref.current = value
-    }, [value])
-
-    return ref.current
-}
-
 function FeaturesDesktop() {
-    let [changeCount, setChangeCount] = useState(0)
-    let [selectedIndex, setSelectedIndex] = useState(0)
-    let prevIndex = usePrevious(selectedIndex)
+    const [selectedIndex, setSelectedIndex] = useState(0)
 
-    let onChange = useDebouncedCallback(
+    const onChange = useDebouncedCallback(
         (selectedIndex) => {
             setSelectedIndex(selectedIndex)
-            setChangeCount((changeCount) => changeCount + 1)
         },
         100,
         { leading: true },
@@ -464,14 +451,14 @@ function FeaturesDesktop() {
 }
 
 function FeaturesMobile() {
-    let [activeIndex, setActiveIndex] = useState(0)
-    let slideContainerRef = useRef<React.ElementRef<'div'>>(null)
-    let slideRefs = useRef<Array<React.ElementRef<'div'>>>([])
+    const [activeIndex, setActiveIndex] = useState(0)
+    const slideContainerRef = useRef<React.ElementRef<'div'>>(null)
+    const slideRefs = useRef<Array<React.ElementRef<'div'>>>([])
 
     useEffect(() => {
-        let observer = new window.IntersectionObserver(
+        const observer = new window.IntersectionObserver(
             (entries) => {
-                for (let entry of entries) {
+                for (const entry of entries) {
                     if (entry.isIntersecting && entry.target instanceof HTMLDivElement) {
                         setActiveIndex(slideRefs.current.indexOf(entry.target))
                         break
@@ -484,7 +471,7 @@ function FeaturesMobile() {
             },
         )
 
-        for (let slide of slideRefs.current) {
+        for (const slide of slideRefs.current) {
             if (slide) {
                 observer.observe(slide)
             }
@@ -503,8 +490,8 @@ function FeaturesMobile() {
             >
                 {features.map((feature, featureIndex) => (
                     <div
+                        ref={slideContainerRef}
                         key={featureIndex}
-                        ref={(ref) => ref && (slideRefs.current[featureIndex] = ref)}
                         className="w-full flex-none snap-center px-4 sm:px-6"
                     >
                         <div className="relative transform overflow-hidden rounded-2xl bg-sapphireDark80 px-5 py-6">

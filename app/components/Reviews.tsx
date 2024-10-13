@@ -93,12 +93,11 @@ function StarIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function StarRating({ rating }: { rating: Review['rating'] }) {
   return (
     <div className="flex">
-      {[...Array(5).keys()].map((index) => (
+      {[1, 2, 3, 4, 6].map((index) => (
         <StarIcon
           key={index}
           className={clsx(
-            'h-5 w-5',
-            rating > index ? 'fill-green-500' : 'fill-gray-300',
+            'h-5 w-5 fill-green-500',
           )}
         />
       ))}
@@ -114,8 +113,8 @@ function Review({
   className,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<'figure'>, keyof Review> & Review) {
-  let animationDelay = useMemo(() => {
-    let possibleAnimationDelays = ['0s', '0.1s', '0.2s', '0.3s', '0.4s', '0.5s']
+  const animationDelay = useMemo(() => {
+    const possibleAnimationDelays = ['0s', '0.1s', '0.2s', '0.3s', '0.4s', '0.5s']
     return possibleAnimationDelays[
       Math.floor(Math.random() * possibleAnimationDelays.length)
     ]
@@ -145,9 +144,9 @@ function Review({
 }
 
 function splitArray<T>(array: Array<T>, numParts: number) {
-  let result: Array<Array<T>> = []
+  const result: Array<Array<T>> = []
   for (let i = 0; i < array.length; i++) {
-    let index = i % numParts
+    const index = i % numParts
     if (!result[index]) {
       result[index] = []
     }
@@ -167,16 +166,16 @@ function ReviewColumn({
   reviewClassName?: (reviewIndex: number) => string
   msPerPixel?: number
 }) {
-  let columnRef = useRef<React.ElementRef<'div'>>(null)
-  let [columnHeight, setColumnHeight] = useState(0)
-  let duration = `${columnHeight * msPerPixel}ms`
+  const columnRef = useRef<React.ElementRef<'div'>>(null)
+  const [columnHeight, setColumnHeight] = useState(0)
+  const duration = `${columnHeight * msPerPixel}ms`
 
   useEffect(() => {
     if (!columnRef.current) {
       return
     }
 
-    let resizeObserver = new window.ResizeObserver(() => {
+    const resizeObserver = new window.ResizeObserver(() => {
       setColumnHeight(columnRef.current?.offsetHeight ?? 0)
     })
 
@@ -206,12 +205,12 @@ function ReviewColumn({
 }
 
 function ReviewGrid() {
-  let containerRef = useRef<React.ElementRef<'div'>>(null)
-  let isInView = useInView(containerRef, { once: true, amount: 0.4 })
-  let columns = splitArray(reviews, 3)
-  let column1 = columns[0]
-  let column2 = columns[1]
-  let column3 = splitArray(columns[2], 2)
+  const containerRef = useRef<React.ElementRef<'div'>>(null)
+  const isInView = useInView(containerRef, { once: true, amount: 0.4 })
+  const columns = splitArray(reviews, 3)
+  const column1 = columns[0]
+  const column2 = columns[1]
+  const column3 = splitArray(columns[2], 2)
 
   return (
     <div

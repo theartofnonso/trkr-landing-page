@@ -1,5 +1,4 @@
 import { Faqs } from '@/app/components/Faqs'
-import { Hero } from '@/app/components/Hero'
 import { PrimaryFeatures } from '@/app/components/PrimaryFeatures'
 import { Reviews } from '@/app/components/Reviews'
 import { SecondaryFeatures } from '@/app/components/SecondaryFeatures'

@@ -62,7 +62,7 @@ function DeviceArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 function DeviceCardsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  let id = useId()
+  const id = useId()
 
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
