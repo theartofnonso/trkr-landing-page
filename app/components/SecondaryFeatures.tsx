@@ -195,10 +195,10 @@ export function SecondaryFeatures() {
     >
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-white-900">
+          <h2 className="text-3xl font-medium tracking-tight text-white">
             What is inside of TRKR
           </h2>
-          <p className="mt-2 text-lg text-white-600">
+          <p className="mt-2 text-lg text-white-200">
               We understand that training is more than just lifting weights—it’s about
               being intentional with every movement, ensuring each rep aligns with your goals.
           </p>
@@ -213,10 +213,10 @@ export function SecondaryFeatures() {
               className="rounded-md p-8 bg-sapphireDark60"
             >
               <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-white-900">
+              <h3 className="mt-6 font-semibold text-white">
                 {feature.name}
               </h3>
-              <p className="mt-2 text-white-700">{feature.description}</p>
+              <p className="mt-2 text-white-200">{feature.description}</p>
             </li>
           ))}
         </ul>
