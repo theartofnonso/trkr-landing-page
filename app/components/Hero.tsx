@@ -46,8 +46,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
                 y2="1025"
                 gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#06b6d4" />
-              <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+              <stop stopColor="#2bf20c" />
+              <stop offset="1" stopColor="#2bf20c" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -76,8 +76,8 @@ function BackgroundIllustration(props: React.ComponentPropsWithoutRef<'div'>) {
                 y2="913"
                 gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#06b6d4" />
-              <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+              <stop stopColor="#2bf20c" />
+              <stop offset="1" stopColor="#2bf20c" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -100,7 +100,7 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function Hero() {
   return (
-      <div className="overflow-hidden py-2 sm:py-2 lg:pb-10 xl:pb-36 bg-white">
+      <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 bg-white">
         <Container>
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
             <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
