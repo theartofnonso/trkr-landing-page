@@ -40,11 +40,11 @@ export function Faqs() {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
             id="faqs-title"
-            className="text-3xl font-medium tracking-tight text-white-900"
+            className="text-3xl font-medium tracking-tight text-white"
           >
             Frequently asked questions
           </h2>
-          <p className="mt-2 text-lg text-white-600">
+          <p className="mt-2 text-lg text-gray-400">
             If you have anything else you want to ask,{' '}
             <a
               href="mailto:hello@trkr.fit"

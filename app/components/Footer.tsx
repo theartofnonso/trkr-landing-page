@@ -5,7 +5,7 @@ export function Footer() {
     <footer>
       <Container>
         <div className="flex flex-col items-start pb-12 justify-start">
-          <p className="mt-6 text-sm text-white-500 md:mt-0">
+          <p className="mt-6 text-sm text-gray-400 md:mt-0">
             &copy; Copyright {new Date().getFullYear()}. All rights reserved.
           </p>
         </div>
