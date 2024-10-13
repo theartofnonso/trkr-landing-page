@@ -449,11 +449,6 @@ function FeaturesDesktop() {
         </TabGroup>
     )
 }
-function temp(ref) {
-    if (ref) {
-        slideRefs.current[featureIndex] = ref;
-    }
-}
 
 function FeaturesMobile() {
     const [activeIndex, setActiveIndex] = useState(0)
