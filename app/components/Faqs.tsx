@@ -8,9 +8,9 @@ const faqs = [
         'Logging your workouts helps track progress, identify trends, and ensure you’re using progressive overload to continuously improve your strength and endurance.',
     },
     {
-      question: 'What if I don’t know how to perform an exercise properly?',
+      question: 'How do I track progress for specific muscle groups?',
       answer:
-        'Our app includes detailed exercise descriptions and instructional videos to ensure you’re performing each exercise with proper form.',
+          'TRKR automatically categorizes your exercises by muscle group. You can review your training frequency and volume for each group over time, allowing you to focus on areas that need more attention.',
     },
   ],
   [
@@ -19,22 +19,12 @@ const faqs = [
       answer:
         'TRKR visualizes your progress with graphs and reports, showing how your strength, endurance, and muscle development have improved over time.',
     },
-    {
-      question: 'Can I create custom workout templates?',
-      answer:
-          'Yes, you can create and save custom workout templates to use for future sessions or share with others.',
-    },
   ],
   [
     {
       question: 'How do I set goals for my workouts?',
       answer:
         'The app lets you set weight and rep targets for each exercise. It also tracks your personal records and offers recommendations based on your past performance.',
-    },
-    {
-      question: 'How do I track progress for specific muscle groups?',
-      answer:
-        'TRKR automatically categorizes your exercises by muscle group. You can review your training frequency and volume for each group over time, allowing you to focus on areas that need more attention.',
     },
   ],
 ]
