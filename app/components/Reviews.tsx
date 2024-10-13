@@ -98,7 +98,7 @@ function StarRating({ rating }: { rating: Review['rating'] }) {
           key={index}
           className={clsx(
             'h-5 w-5',
-            rating > index ? 'fill-cyan-500' : 'fill-gray-300',
+            rating > index ? 'fill-green-500' : 'fill-gray-300',
           )}
         />
       ))}
@@ -124,20 +124,20 @@ function Review({
   return (
     <figure
       className={clsx(
-        'animate-fade-in rounded-3xl bg-white p-6 opacity-0 shadow-md shadow-gray-900/5',
+        'animate-fade-in p-6 opacity-0',
         className,
       )}
       style={{ animationDelay }}
       {...props}
     >
-      <blockquote className="text-gray-900">
+      <blockquote className="">
         <StarRating rating={rating} />
         <p className="mt-4 text-lg font-semibold leading-6 before:content-['“'] after:content-['”']">
           {title}
         </p>
         <p className="mt-3 text-base leading-7">{body}</p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-gray-600 before:content-['–_']">
+      <figcaption className="mt-3 text-sm text-gray-400 before:content-['–_']">
         {author}
       </figcaption>
     </figure>
@@ -216,7 +216,7 @@ function ReviewGrid() {
   return (
     <div
       ref={containerRef}
-      className="relative -mx-4 grid h-[49rem] max-h-[150vh] grid-cols-1 items-start gap-8 overflow-hidden px-4 md:grid-cols-2 lg:grid-cols-3 bg-white"
+      className="relative -mx-4 grid h-[49rem] max-h-[150vh] grid-cols-1 items-start gap-8 overflow-hidden px-4 md:grid-cols-2 lg:grid-cols-3"
     >
       {isInView && (
         <>
@@ -246,8 +246,8 @@ function ReviewGrid() {
           />
         </>
       )}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32" />
     </div>
   )
 }
@@ -257,9 +257,9 @@ export function Reviews() {
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="pb-8 pt-8 bg-white"
+      className="pb-8 py-16"
     >
-      <Container className="bg-white">
+      <Container>
         <ReviewGrid />
       </Container>
     </section>

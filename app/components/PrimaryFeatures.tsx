@@ -56,7 +56,7 @@ const features = [
         name: 'Share Personal Bests',
         description:
             'Celebrate every milestone—big or small—by sharing your progress with the people who matter most. Let them see the effort you’re putting in.',
-        image: 'phone_two.png',
+        image: 'phone_three.png',
         icon: DeviceTouchIcon,
         screen: InvestScreen,
     },
@@ -566,20 +566,7 @@ export function PrimaryFeatures() {
         <section
             id="features"
             aria-label="Features for investing all your money"
-            className="py-20 sm:py-32"
-        >
-            <Container>
-                <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-                    <h2 className="text-3xl font-medium tracking-tight text-white">
-                        We put the BETTER in your training
-                    </h2>
-                    <p className="mt-2 text-lg text-gray-400">
-                        TRKR is crafted by individuals passionate about optimizing human performance.
-                        We believe that with tracking every aspect of your training and valuable insights into your training behaviors, you’re set up for even better results and
-                        continuous improvement.
-                    </p>
-                </div>
-            </Container>
+            className="pb-20">
             <div className="mt-16 md:hidden">
                 <FeaturesMobile />
             </div>

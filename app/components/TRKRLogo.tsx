@@ -8,7 +8,7 @@ export function TRKRLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
         {...props}
     >
         <defs>
-            <style>{".cls-1{fill:#191c24;stroke-width:0}"}</style>
+            <style>{".cls-1{fill:#ffffff;stroke-width:0}"}</style>
         </defs>
         <g id="_\u0421\u043B\u043E\u0439_1">
             <path

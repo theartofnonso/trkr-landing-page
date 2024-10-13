@@ -191,7 +191,7 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for building a portfolio"
-      className="pt-2 pb-20 sm:pb-32 sm:pt-2"
+      className="pt-2 pb-2 sm:pb-2 sm:pt-2"
     >
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
