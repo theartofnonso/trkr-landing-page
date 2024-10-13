@@ -191,14 +191,14 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for building a portfolio"
-      className="py-20 sm:py-32 bg-white"
+      className="pt-2 pb-20 sm:pb-32 sm:pt-2"
     >
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-gray-900">
+          <h2 className="text-3xl font-medium tracking-tight text-white-900">
             What is inside of TRKR
           </h2>
-          <p className="mt-2 text-lg text-gray-600">
+          <p className="mt-2 text-lg text-white-600">
               We understand that training is more than just lifting weights—it’s about
               being intentional with every movement, ensuring each rep aligns with your goals.
           </p>
@@ -210,13 +210,13 @@ export function SecondaryFeatures() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
+              className="rounded-md p-8 bg-sapphireDark60"
             >
               <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-gray-900">
+              <h3 className="mt-6 font-semibold text-white-900">
                 {feature.name}
               </h3>
-              <p className="mt-2 text-gray-700">{feature.description}</p>
+              <p className="mt-2 text-white-700">{feature.description}</p>
             </li>
           ))}
         </ul>

@@ -7,13 +7,13 @@ import { SecondaryFeatures } from '@/app/components/SecondaryFeatures'
 
 export default function Home() {
     return (
-        <>
+        <div className="bg-gradient-to-b from-sapphireDark80 to-sapphireDark">
             <Hero />
             <PrimaryFeatures />
             <SecondaryFeatures />
             <CallToAction />
             <Reviews />
             <Faqs />
-        </>
+        </div>
     )
 }
