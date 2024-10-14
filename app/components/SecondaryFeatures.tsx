@@ -1,226 +1,120 @@
-import { useId } from 'react'
 
 import { Container } from '@/app/components/Container'
+
+import {BookmarkIcon, ChartBarSquareIcon, RocketLaunchIcon, UserCircleIcon} from '@heroicons/react/24/solid'
 
 const features = [
   {
     name: 'Log workout sessions',
     description:
       'Keep track of every rep, set, and weights whilst training.',
-    icon: DeviceArrowIcon,
+    icon: Bookmark,
   },
   {
     name: 'Track other activities',
     description:
       'Bring other activities that align with your goals to see the bigger picture of your performance.',
-    icon: DeviceCardsIcon,
+    icon: RocketLaunch,
   },
   {
     name: 'Get personalised training',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
-    icon: DeviceClockIcon,
+      'Get personalized training tailored to your goals and fitness level. We meet you where you are.',
+    icon: UserCircle,
   },
   {
     name: 'Understand your training',
     description:
-      'Get personalized training tailored to your goals and fitness level. We meet you where you are.',
-    icon: DeviceListIcon,
+      'Use data-driven insights to guide every workout and make smart decisions to optimise performance.',
+    icon: ChartBarSquare,
   },
   {
     name: 'Share achievements',
     description:
       'Celebrate your wins, big or small! Share your achievements and inspire others.',
-    icon: DeviceLockIcon,
+    icon: RocketLaunch,
   },
   {
     name: 'Progressive overload',
     description:
       'It’s the key to pushing past plateaus and making measurable progress in your fitness journey.',
-    icon: DeviceChartIcon,
+    icon: RocketLaunch,
   },
 ]
 
-function DeviceArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-        fill="#737373"
-      />
-      <path
-        d="M12 25l8-8m0 0h-6m6 0v6"
-        stroke="#171717"
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-    </svg>
-  )
+function Bookmark(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <BookmarkIcon {...props} />
+    )
 }
 
-function DeviceCardsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  const id = useId()
 
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-        fill="#737373"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9 13a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H10a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H10a1 1 0 01-1-1v-2zm1 5a1 1 0 00-1 1v2a1 1 0 001 1h12a1 1 0 001-1v-2a1 1 0 00-1-1H10z"
-        fill={`url(#${id}-gradient)`}
-      />
-      <rect x={9} y={6} width={14} height={4} rx={1} fill="#171717" />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <defs>
-        <linearGradient
-          id={`${id}-gradient`}
-          x1={16}
-          y1={12}
-          x2={16}
-          y2={28}
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#737373" />
-          <stop offset={1} stopColor="#737373" stopOpacity={0} />
-        </linearGradient>
-      </defs>
-    </svg>
-  )
+function RocketLaunch(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <RocketLaunchIcon {...props} />
+    )
 }
 
-function DeviceClockIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v10h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h5v2H9a4 4 0 01-4-4V4z"
-        fill="#737373"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M24 32a8 8 0 100-16 8 8 0 000 16zm1-8.414V19h-2v5.414l4 4L28.414 27 25 23.586z"
-        fill="#171717"
-      />
-    </svg>
-  )
+function ChartBarSquare(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <ChartBarSquareIcon {...props} />
+    )
 }
 
-function DeviceListIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-        fill="#737373"
-      />
-      <circle cx={11} cy={14} r={2} fill="#171717" />
-      <circle cx={11} cy={20} r={2} fill="#171717" />
-      <circle cx={11} cy={26} r={2} fill="#171717" />
-      <path
-        d="M16 14h6M16 20h6M16 26h6"
-        stroke="#737373"
-        strokeWidth={2}
-        strokeLinecap="square"
-      />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-    </svg>
-  )
+function UserCircle(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <UserCircleIcon {...props} />
+    )
 }
 
-function DeviceLockIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v10h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h5v2H9a4 4 0 01-4-4V4z"
-        fill="#737373"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M18 19.5a3.5 3.5 0 117 0V22a2 2 0 012 2v6a2 2 0 01-2 2h-7a2 2 0 01-2-2v-6a2 2 0 012-2v-2.5zm2 2.5h3v-2.5a1.5 1.5 0 00-3 0V22z"
-        fill="#171717"
-      />
-    </svg>
-  )
-}
-
-function DeviceChartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-        fill="#737373"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M23 13.838V26a2 2 0 01-2 2H11a2 2 0 01-2-2V15.65l2.57 3.212a1 1 0 001.38.175L15.4 17.2a1 1 0 011.494.353l1.841 3.681c.399.797 1.562.714 1.843-.13L23 13.837z"
-        fill="#171717"
-      />
-      <path
-        d="M10 12h12"
-        stroke="#737373"
-        strokeWidth={2}
-        strokeLinecap="square"
-      />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-    </svg>
-  )
-}
 
 export function SecondaryFeatures() {
   return (
-    <section
-      id="secondary-features"
-      aria-label="Features for building a portfolio"
-      className="pt-2 pb-2 sm:pb-2 sm:pt-2"
-    >
-      <Container>
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            What is inside of TRKR
-          </h2>
-          <p className="mt-2 text-lg text-gray-400">
-              We understand that training is more than just lifting weights—it’s about
-              being intentional with every movement, ensuring each rep aligns with your goals.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
-        >
-          {features.map((feature) => (
-            <li
-              key={feature.name}
-              className="rounded-md p-8 bg-sapphireDark60"
-            >
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-white">
-                {feature.name}
-              </h3>
-              <p className="mt-2 text-gray-400">{feature.description}</p>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </section>
+      <section
+          id="secondary-features"
+          aria-label="Features for building a portfolio"
+          className="relative isolate pt-2 pb-2 sm:pb-2 sm:pt-2"
+      >
+          <div
+              aria-hidden="true"
+              className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          >
+              <div
+                  style={{
+                      clipPath:
+                          'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                  }}
+                  className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#2bf20c] to-[#038cec] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+              />
+          </div>
+          <Container>
+              <div className="mx-auto max-w-2xl sm:text-center">
+                  <h2 className="text-3xl font-medium tracking-tight text-white">
+                      What is inside TRKR
+                  </h2>
+                  <p className="mt-2 text-lg text-gray-400">
+                      We understand that training is more than just lifting weights—it’s about
+                      being intentional with every movement, ensuring each rep aligns with your goals.
+                  </p>
+              </div>
+              <ul
+                  role="list"
+                  className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
+              >
+                  {features.map((feature) => (
+                      <li
+                          key={feature.name}
+                          className="rounded-md p-8 bg-sapphireDark60"
+                      >
+                          <feature.icon className="h-6 w-6"/>
+                          <h3 className="mt-6 font-semibold text-white">
+                              {feature.name}
+                          </h3>
+                          <p className="mt-2 text-gray-400">{feature.description}</p>
+                      </li>
+                  ))}
+              </ul>
+          </Container>
+      </section>
   )
 }

@@ -8,8 +8,9 @@ export function AppStoreLink({
 }) {
   return (
     <Link
-      href="#"
+      href="https://apps.apple.com/gb/app/trkr-train-better/id6474073502"
       aria-label="Download on the App Store"
+      target={'_blank'}
       className={clsx(
         'rounded-lg transition-colors',
         color === 'black'
