@@ -256,7 +256,7 @@ export function Reviews() {
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="pb-8 py-16"
+      className="py-16"
     >
       <Container>
         <ReviewGrid />

@@ -25,14 +25,14 @@ const features = [
     {
         name: 'Reveal patterns and plateaus',
         description:
-            'Identify areas where you may be struggling and get tailored advice from TRKR Coach on how to overcome them.',
+            'Identify specific areas where you might be facing challenges in your training. By pinpointing these struggles, you can effectively address them and enhance your performance.',
         image: 'phone_two.png',
         icon: ArrowTrendingUp,
     },
     {
-        name: 'Share Personal Bests',
+        name: 'Get coached while training ',
         description:
-            'Celebrate every milestone—big or small—by sharing your progress with the people who matter most. const them see the effort you’re putting in.',
+            'Leverage personalized insights from TRKR Coach to identify and address problem areas in your training.',
         image: 'phone_three.png',
         icon: RocketLaunch,
     },
@@ -227,7 +227,7 @@ export function PrimaryFeatures() {
         <section
             id="features"
             aria-label="Features for investing all your money"
-            className="pb-20">
+            className="pb-16">
             <div className="md:hidden">
                 <FeaturesMobile/>
             </div>

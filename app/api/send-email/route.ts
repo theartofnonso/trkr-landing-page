@@ -7,8 +7,8 @@ export async function POST() {
 
     try {
         const { data, error } = await resend.emails.send({
-            from: 'miscellaneous002614@trkr.fit',
-            to: ['hello@trkr.fit'],
+            from: 'hello@trkr.fit',
+            to: ['slimbion@gmail.com'],
             subject: 'Hello world',
             react: WaitlistEmail({ name: 'New User' }),
         });

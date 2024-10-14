@@ -34,7 +34,7 @@ export function Faqs() {
       <section
           id="faqs"
           aria-labelledby="faqs-title"
-          className="relative isolate py-10"
+          className="relative isolate py-16"
       >
         <div
             aria-hidden="true"

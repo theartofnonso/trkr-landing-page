@@ -1,6 +1,6 @@
 'use client';
 
-import {CalendarDaysIcon, HandRaisedIcon} from '@heroicons/react/24/outline'
+import {DevicePhoneMobileIcon, CalendarDaysIcon} from '@heroicons/react/24/outline'
 import {FormEvent, useState} from "react";
 
 export default function Newsletter() {
@@ -35,7 +35,7 @@ export default function Newsletter() {
     };
 
     return (
-        <div className="relative isolate overflow-hidden bg-transparent py-16 sm:py-24 lg:py-32">
+        <div className="relative isolate overflow-hidden bg-transparent py-16">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
                     <div className="max-w-xl lg:max-w-lg">
@@ -74,7 +74,7 @@ export default function Newsletter() {
                 <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                         <div className="flex flex-col items-start">
                             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                                <CalendarDaysIcon aria-hidden="true" className="h-6 w-6 text-white"/>
+                                <DevicePhoneMobileIcon aria-hidden="true" className="h-6 w-6 text-white"/>
                             </div>
                             <dt className="mt-4 font-semibold text-white">New Features</dt>
                             <dd className="mt-2 leading-7 text-gray-400">
@@ -83,7 +83,7 @@ export default function Newsletter() {
                         </div>
                         <div className="flex flex-col items-start">
                             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                                <HandRaisedIcon aria-hidden="true" className="h-6 w-6 text-white"/>
+                                <CalendarDaysIcon aria-hidden="true" className="h-6 w-6 text-white"/>
                             </div>
                             <dt className="mt-4 font-semibold text-white">Events</dt>
                             <dd className="mt-2 leading-7 text-gray-400">

@@ -35,9 +35,9 @@ const features = [
     icon: RocketLaunch,
   },
   {
-    name: 'Progressive overload',
+    name: 'Community',
     description:
-      'It’s the key to pushing past plateaus and making measurable progress in your fitness journey.',
+      'Connect with fellow fitness enthusiasts who share your passion and commitment for wellness.',
     icon: RocketLaunch,
   },
 ]
@@ -73,7 +73,7 @@ export function SecondaryFeatures() {
       <section
           id="secondary-features"
           aria-label="Features for building a portfolio"
-          className="relative isolate pt-2 pb-2 sm:pb-2 sm:pt-2"
+          className="relative isolate py-16"
       >
           <div
               aria-hidden="true"
