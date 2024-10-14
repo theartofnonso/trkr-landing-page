@@ -60,7 +60,7 @@ export function Faqs() {
               If you have anything else you want to ask,{' '}
               <a
                   href="mailto:hello@trkr.fit"
-                  className="text-white-900 underline"
+                  className="text-white underline"
               >
                 reach out to us
               </a>

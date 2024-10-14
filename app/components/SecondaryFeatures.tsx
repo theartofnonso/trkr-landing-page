@@ -19,13 +19,13 @@ const features = [
   {
     name: 'Get personalised training',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Get personalized training tailored to your goals and fitness level. We meet you where you are.',
     icon: UserCircle,
   },
   {
     name: 'Understand your training',
     description:
-      'Get personalized training tailored to your goals and fitness level. We meet you where you are.',
+      'Use data-driven insights to guide every workout and make smart decisions to optimise performance.',
     icon: ChartBarSquare,
   },
   {
@@ -90,7 +90,7 @@ export function SecondaryFeatures() {
           <Container>
               <div className="mx-auto max-w-2xl sm:text-center">
                   <h2 className="text-3xl font-medium tracking-tight text-white">
-                      What is inside of TRKR
+                      What is inside TRKR
                   </h2>
                   <p className="mt-2 text-lg text-gray-400">
                       We understand that training is more than just lifting weights—it’s about
