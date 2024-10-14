@@ -5,7 +5,7 @@ import {FormEvent, useState} from "react";
 
 export default function Newsletter() {
 
-    let [email, setEmail] = useState("false")
+    let [email, setEmail] = useState("")
     const [isSubscribed, setIsSubscribed] = useState(false);
 
     const handleSubmit = async (e: FormEvent) => {
@@ -21,6 +21,8 @@ export default function Newsletter() {
             });
 
             const result = await res.json();
+
+            console.log(result);
 
             if (result.success) {
                 setIsSubscribed(true);
