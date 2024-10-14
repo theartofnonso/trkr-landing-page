@@ -43,7 +43,7 @@ export default function Newsletter() {
                             newsletter.</h2>
                         <p className="mt-4 text-lg leading-8 text-gray-300">
                             Join a community of people who track their progress, share their wins, and motivate each
-                            other to reach new fitness goals,
+                            other to reach new fitness goals.
                         </p>
                         <form onSubmit={handleSubmit}>
                             <div className="mt-6 flex max-w-md gap-x-4">
