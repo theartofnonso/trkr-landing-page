@@ -11,6 +11,7 @@ const LoadingSpinner: React.FC = () => {
                     alt="TRKR logo"
                     width={60}
                     height={38}
+                    style={{ width: "auto", height: "auto" }}
                     priority
                 />
             </div>

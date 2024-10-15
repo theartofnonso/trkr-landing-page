@@ -106,7 +106,7 @@ export function SecondaryFeatures() {
                           key={feature.name}
                           className="rounded-md p-8 bg-sapphireDark60"
                       >
-                          <feature.icon className="h-6 w-6"/>
+                          <feature.icon className="text-gray-400 h-8 w-8"/>
                           <h3 className="mt-6 font-semibold text-white">
                               {feature.name}
                           </h3>

@@ -1,8 +1,9 @@
 // Define the Set interface
 import React from "react";
+import {convertMilliseconds} from "@/app/utils/date_utils";
 
-interface Set {
-    value1: number;
+export interface Set {
+    value1?: number;
     value2: number;
     checked: boolean;
 }
@@ -47,7 +48,17 @@ export function WRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
             </div>
             {sets.map((set, index) => (
                 <div className="my-2" key={index}>
-                    <ExerciseCardItem value1={set.value1} value2={set.value2} checked={set.checked}/>
+                    <div className="bg-sapphireDark80 text-white rounded-md shadow-lg py-2">
+                        <div className="flex justify-between items-center">
+                            <div className="flex-1 text-center">
+                                <p className="text-sm font-thin">{set.value1}</p>
+                            </div>
+                            <div className="w-0.5 h-8 bg-sapphireLighter bg-opacity-40"></div>
+                            <div className="flex-1 text-center">
+                                <p className="text-sm font-thin">{set.value2}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             ))}
         </section>
@@ -55,6 +66,7 @@ export function WRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
 }
 
 export function BWExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
+    console.log(sets);
     return (
         <section className="rounded-lg p-4 text-white font-[family-name:var(--font-geist-sans)]">
             <h2 className="text-sm font-medium mb-3 flex justify-center">{exercise.name}</h2>
@@ -64,7 +76,13 @@ export function BWExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
             </div>
             {sets.map((set, index) => (
                 <div className="my-2" key={index}>
-                    <ExerciseCardItem value1={set.value1} value2={set.value2} checked={set.checked}/>
+                    <div className="bg-sapphireDark80 text-white rounded-md shadow-lg py-2">
+                        <div className="flex justify-between items-center">
+                            <div className="flex-1 text-center">
+                                <p className="text-sm font-thin">{set.value2}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             ))}
         </section>
@@ -81,25 +99,15 @@ export function DRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
             </div>
             {sets.map((set, index) => (
                 <div className="my-2" key={index}>
-                    <ExerciseCardItem value1={set.value1} value2={set.value2} checked={set.checked}/>
+                    <div className="bg-sapphireDark80 text-white rounded-md shadow-lg py-2">
+                        <div className="flex justify-between items-center">
+                            <div className="flex-1 text-center">
+                                <p className="text-sm font-thin">{convertMilliseconds(set.value1 ?? 0)}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             ))}
         </section>
-    )
-}
-
-const ExerciseCardItem: React.FC<Set> = ({value1, value2}: Set) => {
-    return (
-        <div className="bg-sapphireDark80 text-white rounded-md shadow-lg py-2">
-            <div className="flex justify-between items-center">
-                <div className="flex-1 text-center">
-                    <p className="text-sm font-thin">{value1}</p>
-                </div>
-                <div className="w-0.5 h-8 bg-sapphireLighter bg-opacity-40"></div>
-                <div className="flex-1 text-center">
-                    <p className="text-sm font-thin">{value2}</p>
-                </div>
-            </div>
-        </div>
     )
 }
