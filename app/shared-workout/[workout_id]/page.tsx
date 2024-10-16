@@ -102,7 +102,7 @@ export default function Workout() {
 
         getWorkout();
 
-    }, []);
+    });
 
     if (!workout) {
         return <LoadingSpinner/>;
