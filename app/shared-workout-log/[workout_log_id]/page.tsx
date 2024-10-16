@@ -108,7 +108,7 @@ export default function WorkoutLog() {
 
         getWorkoutLog();
 
-    }, []);
+    });
 
     if (!workoutLog) {
         return <LoadingSpinner/>;

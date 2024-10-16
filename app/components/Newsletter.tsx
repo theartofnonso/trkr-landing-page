@@ -1,37 +1,21 @@
 'use client';
 
-import {DevicePhoneMobileIcon, CalendarDaysIcon} from '@heroicons/react/24/outline'
+import {CalendarDaysIcon, DevicePhoneMobileIcon} from '@heroicons/react/24/outline'
 import {FormEvent, useState} from "react";
 
 export default function Newsletter() {
 
     let [email, setEmail] = useState("")
-    const [isSubscribed, setIsSubscribed] = useState(false);
 
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = async (_: FormEvent) => {
 
-        try {
-            const res = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({email}),
-            });
-
-            const result = await res.json();
-
-            console.log(result);
-
-            if (result.success) {
-                setIsSubscribed(true);
-            } else {
-                setIsSubscribed(false);
-            }
-        } catch (error) {
-            setIsSubscribed(false);
-        }
+        await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({email}),
+        });
     };
 
     return (
@@ -68,10 +52,10 @@ export default function Newsletter() {
                                     Subscribe
                                 </button>
 
-                    </div>
+                            </div>
                         </form>
-                </div>
-                <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+                    </div>
+                    <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                         <div className="flex flex-col items-start">
                             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                                 <DevicePhoneMobileIcon aria-hidden="true" className="h-6 w-6 text-white"/>
