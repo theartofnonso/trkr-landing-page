@@ -11,7 +11,7 @@ export async function POST(request: Request) {
         const {data, error} = await resend.emails.send({
             from: 'TRKR Waitlist <hello@trkr.fit>',
             to: ['anonymous.user.trkr@gmail.com'],
-            subject: 'WaitlistEmail',
+            subject: 'Waitlist Email',
             react: WaitlistEmail({name: email}),
         });
 
