@@ -5,6 +5,7 @@ const resend = new Resend(process.env.RESEND_KEY);
 
 export async function POST(request: Request) {
 
+    // Retrieve email
     const {email} = await request.json();
 
     try {
