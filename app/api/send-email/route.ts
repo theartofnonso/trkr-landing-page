@@ -1,26 +1,24 @@
-import { Resend } from 'resend';
+import {Resend} from 'resend';
 import WaitlistEmail from "@/app/components/WaitlistEmail";
 
-const resend = new Resend("re_ZZy3oriQ_MgHc9ed9UAW347tx6r3uXns8");
+const resend = new Resend(process.env.RESEND_KEY);
 
 export async function POST() {
 
     try {
-        const { data, error } = await resend.emails.send({
-            from: 'hello@trkr.fit',
-            to: ['slimbion@gmail.com'],
-            subject: 'Hello world',
-            react: WaitlistEmail({ name: 'New User' }),
+        const {data, error} = await resend.emails.send({
+            from: 'TRKR Waitlist <hello@trkr.fit>',
+            to: ['anonymous.user.trkr@gmail.com'],
+            subject: 'WaitlistEmail',
+            react: WaitlistEmail({name: 'New User'}),
         });
 
         if (error) {
-            console.log(error);
-            return Response.json({ error }, { status: 500 });
+            return Response.json({error}, {status: 500});
         }
 
         return Response.json(data);
     } catch (error) {
-        console.log(error);
-        return Response.json({ error }, { status: 500 });
+        return Response.json({error}, {status: 500});
     }
 }
