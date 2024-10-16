@@ -1,16 +1,3 @@
-export function formatTime(date: Date): string {
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
-
-    let result = ''
-    if (hours > 0) result += `${hours}h `
-    if (minutes > 0 || hours > 0) result += `${minutes}m `
-    result += `${seconds}s`
-
-    return result.trim()
-}
-
 export function convertMilliseconds(ms: number): string {
     const days = Math.floor(ms / (24 * 60 * 60 * 1000));
     const daysMs = ms % (24 * 60 * 60 * 1000);
@@ -33,7 +20,3 @@ export function convertMilliseconds(ms: number): string {
 
     return parts.join(' ');
 }
-
-// Example usage
-const ms = 987654321; // Replace this with your milliseconds value
-console.log(convertMilliseconds(ms));

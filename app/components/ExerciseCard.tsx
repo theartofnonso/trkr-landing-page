@@ -66,7 +66,6 @@ export function WRExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
 }
 
 export function BWExerciseSection({exercise, notes, sets}: ExerciseTemplate) {
-    console.log(sets);
     return (
         <section className="rounded-lg p-4 text-white font-[family-name:var(--font-geist-sans)]">
             <h2 className="text-sm font-medium mb-3 flex justify-center">{exercise.name}</h2>
