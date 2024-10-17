@@ -1,11 +1,12 @@
 'use client';
 
 import {CalendarDaysIcon, DevicePhoneMobileIcon} from '@heroicons/react/24/outline'
-import {FormEvent, useState} from "react";
+import React, {FormEvent, useState} from "react";
 
 export default function Newsletter() {
 
     let [email, setEmail] = useState("")
+    let [isSubscribing, setIsSubscribing] = useState(false)
     let [isSubscribed, setIsSubscribed] = useState(false)
 
     const handleSubmit = async (e: FormEvent) => {
@@ -13,6 +14,7 @@ export default function Newsletter() {
         e.preventDefault();
 
         setIsSubscribed(false);
+        setIsSubscribing(true);
 
         const response = await fetch('/api/send-email', {
             method: 'POST',
@@ -26,6 +28,9 @@ export default function Newsletter() {
 
         if (status === 200) {
             setIsSubscribed(true);
+            setIsSubscribing(false);
+        } else {
+            setIsSubscribing(false);
         }
     };
 
@@ -67,6 +72,9 @@ export default function Newsletter() {
                         </form>
                         {isSubscribed && <p className="mt-2 text-sm leading-8 text-white">
                             Thanks for subscribing to our newsletter.
+                        </p>}
+                        {isSubscribing && <p className="mt-2 text-sm leading-8 text-white">
+                            Please wait while we subscribe you. . .
                         </p>}
                     </div>
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
