@@ -18,7 +18,7 @@ export function Hero() {
                 />
             </div>
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div className="sm:mb-8 sm:flex sm:justify-center">
                     <div
                         className="relative rounded-full px-3 py-1 text-sm leading-6 text-white ring-1 ring-white hover:ring-gray-900/20">
                         <a href="https://www.instagram.com/trkrtrainer/" className="font-medium text-white" target="_blank">
