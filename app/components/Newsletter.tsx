@@ -10,9 +10,9 @@ export default function Newsletter() {
 
     const handleSubmit = async (e: FormEvent) => {
 
-        setIsSubscribed(false);
-
         e.preventDefault();
+
+        setIsSubscribed(false);
 
         const response = await fetch('/api/send-email', {
             method: 'POST',
