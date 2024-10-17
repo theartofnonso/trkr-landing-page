@@ -6,16 +6,27 @@ import {FormEvent, useState} from "react";
 export default function Newsletter() {
 
     let [email, setEmail] = useState("")
+    let [isSubscribed, setIsSubscribed] = useState(false)
 
-    const handleSubmit = async (_: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
 
-        await fetch('/api/send-email', {
+        setIsSubscribed(false);
+
+        e.preventDefault();
+
+        const response = await fetch('/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({email}),
         });
+
+        const status = response.status;
+
+        if (status === 200) {
+            setIsSubscribed(true);
+        }
     };
 
     return (
@@ -54,6 +65,9 @@ export default function Newsletter() {
 
                             </div>
                         </form>
+                        {isSubscribed && <p className="mt-2 text-sm leading-8 text-white">
+                            Thanks for subscribing to our newsletter.
+                        </p>}
                     </div>
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                         <div className="flex flex-col items-start">
