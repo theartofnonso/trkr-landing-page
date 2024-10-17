@@ -20,7 +20,7 @@ export async function POST(request: Request) {
             return Response.json({error}, {status: 500});
         }
 
-        return Response.json(data);
+        return Response.json(data, {status: 200});
     } catch (error) {
         return Response.json({error}, {status: 500});
     }
