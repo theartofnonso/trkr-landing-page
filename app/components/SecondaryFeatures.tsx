@@ -1,7 +1,7 @@
 
 import { Container } from '@/app/components/Container'
 
-import {BookmarkIcon, ChartBarSquareIcon, RocketLaunchIcon, UserCircleIcon} from '@heroicons/react/24/solid'
+import {BookmarkIcon, ChartBarSquareIcon, StarIcon, ShareIcon, UserGroupIcon, RocketLaunchIcon, UserCircleIcon} from '@heroicons/react/24/solid'
 
 const features = [
   {
@@ -14,7 +14,7 @@ const features = [
     name: 'Track other activities',
     description:
       'Bring other activities that align with your goals to see the bigger picture of your performance.',
-    icon: RocketLaunch,
+    icon: Star,
   },
   {
     name: 'Get personalised training',
@@ -38,7 +38,7 @@ const features = [
     name: 'Community',
     description:
       'Connect with fellow fitness enthusiasts who share your passion and commitment for wellness.',
-    icon: RocketLaunch,
+    icon: UserGroup,
   },
 ]
 
@@ -48,6 +48,11 @@ function Bookmark(props: React.ComponentPropsWithoutRef<'svg'>) {
     )
 }
 
+function Star(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <StarIcon {...props} />
+    )
+}
 
 function RocketLaunch(props: React.ComponentPropsWithoutRef<'svg'>) {
     return (
@@ -55,9 +60,21 @@ function RocketLaunch(props: React.ComponentPropsWithoutRef<'svg'>) {
     )
 }
 
+function UserGroup(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <UserGroupIcon {...props} />
+    )
+}
+
 function ChartBarSquare(props: React.ComponentPropsWithoutRef<'svg'>) {
     return (
         <ChartBarSquareIcon {...props} />
+    )
+}
+
+function Share(props: React.ComponentPropsWithoutRef<'svg'>) {
+    return (
+        <ShareIcon {...props} />
     )
 }
 
