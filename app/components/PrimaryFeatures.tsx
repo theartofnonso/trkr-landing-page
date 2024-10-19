@@ -12,7 +12,7 @@ import {PhoneFrame} from '@/app/components/PhoneFrame'
 
 import Image from "next/image";
 
-import {ArrowTrendingUpIcon, RocketLaunchIcon, LightBulbIcon} from '@heroicons/react/24/solid'
+import {ArrowTrendingUpIcon, UserCircleIcon, LightBulbIcon} from '@heroicons/react/24/solid'
 
 const features = [
     {
@@ -34,7 +34,7 @@ const features = [
         description:
             'Leverage personalized insights from TRKR Coach to identify and address problem areas in your training.',
         image: 'phone_three.png',
-        icon: RocketLaunch,
+        icon: UserCircle,
     },
 ]
 
@@ -50,9 +50,9 @@ function ArrowTrendingUp(props: React.ComponentPropsWithoutRef<'svg'>) {
     )
 }
 
-function RocketLaunch(props: React.ComponentPropsWithoutRef<'svg'>) {
+function UserCircle(props: React.ComponentPropsWithoutRef<'svg'>) {
     return (
-        <RocketLaunchIcon {...props} />
+        <UserCircleIcon {...props} />
     )
 }
 
