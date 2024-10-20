@@ -16,11 +16,11 @@ import {ArrowTrendingUpIcon, UserCircleIcon, LightBulbIcon} from '@heroicons/rea
 
 const features = [
     {
-        name: 'Train with insights',
+        name: 'Get coached while training ',
         description:
-            'Log your training sessions and leverage the data to make smarter, informed decisions about your progress. Discover detailed stats on what to focus on and how to improve.',
-        image: 'phone_one.png',
-        icon: LightBulb,
+            'Leverage personalized insights from TRKR Coach to identify and address problem areas in your training.',
+        image: 'phone_three.png',
+        icon: UserCircle,
     },
     {
         name: 'Reveal patterns and plateaus',
@@ -30,11 +30,11 @@ const features = [
         icon: ArrowTrendingUp,
     },
     {
-        name: 'Get coached while training ',
+        name: 'Train with insights',
         description:
-            'Leverage personalized insights from TRKR Coach to identify and address problem areas in your training.',
-        image: 'phone_three.png',
-        icon: UserCircle,
+            'Log your training sessions and leverage the data to make smarter, informed decisions about your progress. Discover detailed stats on what to focus on and how to improve.',
+        image: 'phone_one.png',
+        icon: LightBulb,
     },
 ]
 
