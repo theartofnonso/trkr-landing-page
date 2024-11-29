@@ -12,29 +12,29 @@ import {PhoneFrame} from '@/app/components/PhoneFrame'
 
 import Image from "next/image";
 
-import {ArrowTrendingUpIcon, UserCircleIcon, LightBulbIcon} from '@heroicons/react/24/solid'
+import {ArrowTrendingUpIcon, DocumentChartBarIcon, LightBulbIcon} from '@heroicons/react/24/solid'
 
 const features = [
     {
-        name: 'Get coached while training ',
+        name: 'Comprehensive Workout Insights',
         description:
-            'Leverage personalized insights from TRKR Coach to identify and address problem areas in your training.',
+            'Get a detailed performance review for each workout. Discover patterns in volume, intensity, and consistency to maximize results and refine your training plan.',
         image: 'phone_three.png',
-        icon: UserCircle,
+        icon: LightBulb,
     },
     {
-        name: 'Reveal patterns and plateaus',
+        name: 'Visualize Your Training Trends',
         description:
-            'Identify specific areas where you might be facing challenges in your training. By pinpointing these struggles, you can effectively address them and enhance your performance.',
+            'Understand your progress over time with detailed graphs for reps, sets, and volume across all muscle groups. Pinpoint areas for improvement and celebrate growth.',
         image: 'phone_two.png',
         icon: ArrowTrendingUp,
     },
     {
-        name: 'Train with insights',
+        name: 'Stay Consistent with Your Workout Streaks',
         description:
-            'Log your training sessions and leverage the data to make smarter, informed decisions about your progress. Discover detailed stats on what to focus on and how to improve.',
+            'Track your fitness progress at a glance with a monthly calendar view. Stay motivated by maintaining streaks and reviewing your past sessions effortlessly.',
         image: 'phone_one.png',
-        icon: LightBulb,
+        icon: DocumentChartBar,
     },
 ]
 
@@ -50,9 +50,9 @@ function ArrowTrendingUp(props: React.ComponentPropsWithoutRef<'svg'>) {
     )
 }
 
-function UserCircle(props: React.ComponentPropsWithoutRef<'svg'>) {
+function DocumentChartBar(props: React.ComponentPropsWithoutRef<'svg'>) {
     return (
-        <UserCircleIcon {...props} />
+        <DocumentChartBarIcon {...props} />
     )
 }
 
