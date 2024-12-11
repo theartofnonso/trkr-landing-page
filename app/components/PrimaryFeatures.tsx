@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {Tab, TabGroup, TabList} from '@headlessui/react'
 import clsx from 'clsx'
 import {motion,} from 'framer-motion'
