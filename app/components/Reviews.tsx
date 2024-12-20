@@ -27,6 +27,12 @@ const reviews: Array<Review> = [
     rating: 5,
   },
   {
+    title: 'Best app to track your fitness',
+    body: 'TRKR is the best app to track my daily training routine. It helps me keep track of the weights providing wide range of workouts and also an option to add a new workout. The share workout details features helps exporting the serials to other person very easily. It has few moats unique features that you cannot find in others.',
+    author: 'nammzz',
+    rating: 5,
+  },
+  {
     title: 'Great fitness companion.',
     body: 'Been using TRKR for weeks and I\'m impressed. It nails the balance between detailed analytics and a sleek looking Ul.\n' +
         'The streak monitor keeps me on track without feeling overwhelming. And I love the insights that help me tweak my workouts for better results.\n' +
@@ -54,6 +60,12 @@ const reviews: Array<Review> = [
     rating: 5,
   },
   {
+    title: 'Best app to track your fitness',
+    body: 'TRKR is the best app to track my daily training routine. It helps me keep track of the weights providing wide range of workouts and also an option to add a new workout. The share workout details features helps exporting the serials to other person very easily. It has few moats unique features that you cannot find in others.',
+    author: 'nammzz',
+    rating: 5,
+  },
+  {
     title: 'Great fitness companion.',
     body: 'Been using TRKR for weeks and I\'m impressed. It nails the balance between detailed analytics and a sleek looking Ul.\n' +
         'The streak monitor keeps me on track without feeling overwhelming. And I love the insights that help me tweak my workouts for better results.\n' +
@@ -78,6 +90,12 @@ const reviews: Array<Review> = [
     title: 'Love this app!',
     body: 'Brilliant app, really easy to use and great for looking back to see what exercises were done previously and the weights used. Love the clock running in the corner so it\'s really easy to keep track of rests too! 10/10',
     author: 'PopsyYork',
+    rating: 5,
+  },
+  {
+    title: 'Best app to track your fitness',
+    body: 'TRKR is the best app to track my daily training routine. It helps me keep track of the weights providing wide range of workouts and also an option to add a new workout. The share workout details features helps exporting the serials to other person very easily. It has few moats unique features that you cannot find in others.',
+    author: 'nammzz',
     rating: 5,
   },
 ]
